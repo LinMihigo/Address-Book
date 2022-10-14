@@ -1,0 +1,233 @@
+:root {
+    --background-color1: white;
+    --background-color2: rgb(244, 248, 250);
+    --background-color3: rgb(251, 252, 253);
+    --border-color1: rgb(166, 195, 210);
+    --border-color2: rgb(236, 243, 247);
+    --box-shadow-color1: rgb(225, 233, 238);
+    --font-color1: rgb(6, 158, 234);
+    --scrollbar-color: rgba(6, 158, 234, 0.6);
+}
+
+.container {
+  width: 80%;
+  height: 56%;
+  margin: 10% 10% 10% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  font-family: Courier;
+  font-weight: 600;
+  color: var(--font-color1);
+  border: 0.5px solid var(--border-color2);
+  box-shadow: 0px 0px 11px 1px var(--box-shadow-color1);
+}
+ {
+  top: 50%;
+  left: 50%;
+}
+
+#title {
+  text-align: center;
+}
+
+/* Form CSS */
+.form {
+  width: 60%;
+  max-width: 600px;
+  background-color: var(--background-color2);
+  position: relative;
+  border: 2px solid var(--border-color2);
+  box-shadow: 0px 0px 11px 1px var(--box-shadow-color1);
+  margin: auto;
+  padding-top: 1em;
+}
+
+label, input, output, span {
+  display: block;
+  width: 60%;
+  margin: auto;
+}
+input {
+  border: 1px solid var(--border-color2);
+}
+
+#error {
+  margin-top: 10px;
+  margin-bottom: -15px;
+}
+
+#btn {
+  display: block;
+  font-weight: 600;
+  color: var(--font-color1);
+  width: 20vw;
+  max-width: 40vw;
+  margin: 1.5rem auto 0.8rem auto;
+  padding: 10px;
+  border: 1px solid var(--border-color1);
+  border-radius: 10px;
+  background-color: var(--background-color1);
+}
+
+/* Table design section */
+.table {
+  height: 0;
+  width: 60%;
+  max-width: 600px;
+  background-color: var(--background-color2);
+  position: relative;
+  border: 2px solid var(--border-color2);
+  box-shadow: 0px 0px 11px 1px var(--box-shadow-color1);
+  margin: 1rem auto;
+  overflow: scroll;
+  visibility: hidden;
+  transition: all 3s ease-in-out 1s;
+}
+
+table, th, td {
+  border: 1.5px solid var(--border-color1);
+  border-collapse: collapse;
+  font-size: 15px;
+  padding: 0.5em;
+  margin: 10px;
+}
+
+th {
+  width: 10%;
+}
+
+/* Media queries (Responsiveness for varying screen sizes) */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 80%;
+    margin: 25% auto;
+  }
+   #title {
+    font-size: 20px;
+  }
+  #form {
+    font-size: 16px;
+  }
+  .form,
+  .table {
+    width: 80%;
+  }
+  #table {
+    margin-top: 15px;
+    font-size: 10px;
+  }
+  table tr {
+    line-height: 8px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .container {
+    width: 80%;
+    margin: 25% auto;
+  }
+     #title {
+    font-size: 26px;
+  }
+  #form {
+    font-size: 16px;
+  }
+  .form,
+  .table {
+    width: 80%;
+  }
+  #table {
+    margin-top: 15px;
+  }
+  table tr {
+    line-height: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+     #title {
+    font-size: 32px;
+  }
+  #form {
+    font-size: 16px;
+  }
+  .form,
+  .table {
+    width: 80%;
+  }
+  #table {
+    margin-top: 10px;
+  }
+  table tr {
+    line-height: 12px;
+  }
+}
+
+
+/* Animations (To show table when hovering with a cursor and tap and holding on a touch screen)*/
+.container:hover, .container:active {
+  height: 100%;
+  margin: 1rem 10% 1rem 10%;
+}
+.container:hover > .table, .container:active > .table {
+  height: 40vh;
+  visibility: visible;
+  transition: all 3s ease-in-out 1s;
+}
+
+#btn:hover {
+  background-color: var(--background-color2);
+  cursor: pointer;
+}
+
+
+/* Scroll bar antics */
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--background-color3);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 4px var(--scrollbar-color);
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--scrollbar-color);
+}
+.table::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.table::-webkit-scrollbar-track {
+  background-color: var(--background-color3);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 4px var(--scrollbar-color);
+}
+.table::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--scrollbar-color);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){
+  input[type=range] {
+  overflow: hidden;
+    -webkit-appearance: none;
+    background-color: var(--background-color3);
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    background-color: var(--scrollbar-color);
+  }
+  input[type=range]::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    -webkit-appearance: none;
+    background: var(--background-color2);
+    border: 1px solid black;
+    box-shadow: -200px 0 0 200px;
+  }
+}

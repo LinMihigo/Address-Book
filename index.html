@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" width="device-width, initial-scale=1.0" />
+    <title>Address book</title>
+    <link rel="stylesheet" href="C:/Users/lmihigo/Documents/GitHub/Address Book/assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+    <!-- Address book title -->
+    <header>
+    <h1 id="title">Contacts Log Book</h1>
+    </header>
+    
+    
+    <!-- Form section -->
+    <div class="form">
+    <form id="form" autocomplete="off">
+      <label>Name: </label><input id="name" type="text" placeholder="Please fill in your names" required /></label>
+      <label>Relationship: </label><input id="rel" type="text" placeholder="e.g. Friend, Cousin, Sister e.t.c..." required />
+      <label for="age">Age: </label>
+      <div class="age">
+        <input id="age" class="slider" id="myAge" type="range" min="0" max="120" value="25" step="1"/>
+        <output id="myAge" class="age" for="age"></output>
+        </div>
+        
+      <label>Phone number: </label><input id="tel" type="tel" placeholder="Enter phone number" required />
+      <label>Email: </label><input id="email" type="email" placeholder="Enter your email address" required />
+      <label>Address: </label><input id="address" type="text" placeholder="Enter your home address" required />
+      <span id="error"></span>
+      <button id="btn" type="button" onclick="publishToTable()">Send</button>
+    </form>
+      </div>
+    
+    <!-- Table where the form inputs are submitted -->
+    <div class="table">
+      <table id="table">
+        <thead>
+          <tr>
+            <th id='name'>Name</th>
+            <th id='rel'>Relationship</th>
+            <th id='age'>Age</th>
+            <th id='tel'>Phone number</th>
+            <th id='email'>Email</th>
+            <th id='address'>Address</th>
+          </tr>
+        </thead>
+      </table>
+      </div>
+    </div>
+    <script src="C:/Users/lmihigoD/ocuments/GitHub/Address Book/assets/scripts.js"></script>
+  </body>
+</html>
